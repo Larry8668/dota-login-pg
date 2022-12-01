@@ -49,7 +49,7 @@ class App extends Component{
         event.preventDefault()
 
         const registered={
-            // fullName:this.state.fullName,
+            fullName:this.state.fullName,
             username:this.state.username,
             email:this.state.email,
             password:this.state.password
@@ -79,11 +79,17 @@ class App extends Component{
                         <div className='form--title'>Lets start the Battle</div>
                         <div className='form--gray'>Please fill your detail to proceed.</div>
                         <form onSubmit={this.onSubmit} className='login--form'>
+                        
+                            <label>
+                            Name <br />
+                            <input type='text' onChange={this.changeFullName} value={this.state.fullName} className='form-control form-group' required/>
+                            </label>
 
                             <label>
                             Username <br/>
                             <input type='text' onChange={this.changeUsername} value={this.state.username} className='form-control form-group' required/> 
                             </label>
+
 
                             <label>
                             Email <br/>
@@ -96,13 +102,8 @@ class App extends Component{
                             </label>
                             <div className='form--submit'>
 
-                            <span></span>
-                            <span></span>
-                            <span></span>
-                            <span></span>
-                            <a href='http://localhost:3001/'>
-                            <input type='submit' className='btn btn-danger btn-block submit' value='Proceed' />
-                            </a>
+                            <input type='submit' className='btn btn-danger btn-block submit' value='Proceed' /> 
+                            
                             </div>
                         </form>
                     </div>
@@ -118,4 +119,3 @@ class App extends Component{
 
 export default App;
 
-// <input type='text' placeholder="Full Name" onChange={this.changeFullName} value={this.state.fullName} className='form-control form-group'/>
